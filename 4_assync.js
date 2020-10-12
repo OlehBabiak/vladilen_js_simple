@@ -48,5 +48,8 @@ p.then(data => {
 		}, 2000)
 	})
 	}).then(clientData => {
-	console.log('Data received', clientData)
+	clientData.fromPromise = true
+	return clientData
+}).then(data => {
+	console.log('Modified', data)
 })
